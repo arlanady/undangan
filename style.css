@@ -1,15 +1,17 @@
 /* Reset dasar */
 
-html,
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* hilangkan scroll samping */
+}
 body {
   margin: 0;
-  width: 100%;
-  padding: 0;
-  overflow-x: hidden;
 }
+
 /* Background full layar */
 .bg {
-  min-height: 100%;
+  min-height: 100vh;
   background: url('assets/foto.jpeg') center center no-repeat;
   background-size: cover;
 }
@@ -118,12 +120,12 @@ body {
 
 .bunga {
   position: absolute;
+  width: 110px;
   z-index: 2;
   opacity: 0;
   max-width: 100%;
+
   animation: masuk 4s ease forwards;
-  width: 110px;
-  max-width: 100%;
 }
 
 /* kiri atas */
