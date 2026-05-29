@@ -1,12 +1,10 @@
 /* Reset dasar */
 
+html,
 body {
   margin: 0;
-}
-html, body {
-  margin: 0;
   padding: 0;
-  overflow-x: hidden; /* hilangkan scroll samping */
+  overflow-x: hidden;
 }
 /* Background full layar */
 .bg {
@@ -119,11 +117,12 @@ html, body {
 
 .bunga {
   position: absolute;
-  width: 110px;
   z-index: 2;
   opacity: 0;
   max-width: 100%;
   animation: masuk 4s ease forwards;
+  width: 90px;
+  max-width: 100%;
 }
 
 /* kiri atas */
