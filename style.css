@@ -9,7 +9,7 @@ html, body {
 }
 /* Background full layar */
 .bg {
-  height: 100vh;
+  min-height: 100vh;
   background: url('assets/foto.jpeg') center center no-repeat;
   background-size: cover;
 }
@@ -121,7 +121,7 @@ html, body {
   width: 110px;
   z-index: 2;
   opacity: 0;
-
+  max-width: 100%;
   animation: masuk 4s ease forwards;
 }
 
