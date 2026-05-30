@@ -298,3 +298,58 @@ body {
     transform: translateY(0);
   }
 }
+.halaman-isi {
+  display: none; /* awalnya disembunyikan */
+  min-height: 100vh;
+  background: #111;
+  color: white;
+  padding-bottom: 80px; /* biar tidak ketutup bottom bar */
+}
+
+.section {
+  display: none;
+  padding: 30px;
+}
+
+.section.aktif {
+  display: block;
+}
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  display: none; /* awalnya tidak tampil */
+
+  width: 100%;
+  height: 60px;
+
+  background: rgba(77, 2, 33, 0.8);
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.bottom-bar button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 10px;
+  cursor: pointer;
+}
+/* posisi awal */
+.kiri-bawah,
+.kanan-bawah {
+  bottom: 0;
+  transition: 0.5s;
+}
+
+/* setelah buka undangan */
+body.open .kiri-bawah,
+body.open .kanan-bawah {
+  bottom: 60px;
+}
