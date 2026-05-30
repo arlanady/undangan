@@ -74,12 +74,12 @@ body {
 
 .nama {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
 
   font-family: "Imperial Script", cursive;
-  font-size: 50px;
+  font-size: 60px;
 
   margin: 0;
 
