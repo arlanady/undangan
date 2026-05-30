@@ -16,3 +16,14 @@ function toggleMusic() {
     music.pause();
   }
 }
+const container = document.querySelector(".falling-flowers");
+
+for (let i = 0; i < 20; i++) {
+  let bunga = document.createElement("span");
+
+  bunga.style.left = Math.random() * 100 + "vw";
+  bunga.style.animationDuration = (5 + Math.random() * 5) + "s";
+  bunga.style.animationDelay = Math.random() * 5 + "s";
+
+  container.appendChild(bunga);
+}
