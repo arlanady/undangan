@@ -1,35 +1,212 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Wedding</title>
+/* Reset dasar */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+* {
+  box-sizing: border-box;
+}
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
-</head>
-<body class="bg">
+.wrapper {
+  height: 100vh;
+  overflow: hidden; /* 🔥 ini kunci utama */
+}
 
-    <img src="assets/bunga1.webp" class="bunga kiri-atas">
-    <img src="assets/bunga2.webp" class="bunga kanan-atas">
-    <img src="assets/bunga3.webp" class="bunga kiri-bawah">
-    <img src="assets/bunga4.webp" class="bunga kanan-bawah">
+/* Background full layar */
+.bg {
+  min-height: 100vh; /* penting! bukan height */
+  background: url('assets/foto.jpeg') center center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+/* Overlay FULL */
+.overlay {
+  position: fixed; /* ganti dari absolute */
+  top: 0;
+  left: 0;
 
-    <div class="overlay">
-        <h1 class="judul">The Wedding</h1>
+  width: 100%;
+  height: 100vh; /* pakai vh, bukan % */
 
-        <h2 class="nama">Makrus & Mila</h2>
+  background: rgba(0, 0, 0, 0.5);
+}
+/* Judul di atas */
+.judul {
+  font-family: "Merienda", cursive;
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  text-align: center;
 
-        <button class="btn-buka" onclick="bukaUndangan()">
-            Buka Undangan
-        </button>
+   margin: 0;
+  margin-top: 30px;
 
-    </div>
+  font-size: 30px;
+  letter-spacing: 2px;
 
-    
-</body>
 
-<script src="script.js"></script>
-</html>
+ /* warna dasar */
+  color: white;
+
+  /* efek glow */
+  text-shadow:
+    0 0 5px rgba(255,255,255,0.8),
+    0 0 10px rgba(255,255,255,0.6),
+    0 0 20px rgba(255,165,0,0.6),
+    0 0 30px rgba(255,165,0,0.4);
+
+  animation: jalan 10s linear infinite;
+}
+
+@keyframes jalan {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+.nama {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-family: "Imperial Script", cursive;
+  font-size: 50px;
+
+  margin: 0;
+
+  color: white;
+
+  /* efek glow halus */
+  text-shadow: 
+    0 0 10px rgba(255,255,255,0.8),
+    0 0 20px rgba(255,165,0,0.6);
+
+    animation: fade 2s ease-in-out;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.btn-buka {
+  position: absolute;
+  bottom: 60px; /* posisi bawah layar */
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 40px;
+  padding: 12px 25px;
+  font-size: 14px;
+
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 30px;
+
+  cursor: pointer;
+
+  /* efek halus */
+  backdrop-filter: blur(5px);
+
+  transition: 0.3s;
+}
+
+/* efek hover (kalau di PC) */
+.btn-buka:hover {
+  background: white;
+  color: black;
+}
+
+.bunga {
+  position: absolute;
+  width: 110px;
+  z-index: 2;
+  opacity: 0;
+
+  animation: masuk 4s ease forwards;
+}
+
+/* kiri atas */
+.kiri-atas {
+  top: 0;
+  left: 0;
+  animation-name: masukKiriAtas;
+}
+
+/* kanan atas */
+.kanan-atas {
+  top: 0;
+  right: 0;
+  animation-name: masukKananAtas;
+}
+
+/* kiri bawah */
+.kiri-bawah {
+  bottom: 0;
+  left: 0;
+  animation-name: masukKiriBawah;
+}
+
+/* kanan bawah */
+.kanan-bawah {
+  bottom: 0;
+  right: 0;
+  animation-name: masukKananBawah;
+}
+@keyframes masukKiriAtas {
+  from {
+    transform: translate(-40px, -40px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes masukKananAtas {
+  from {
+    transform: translate(40px, -40px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes masukKiriBawah {
+  from {
+    transform: translate(-40px, 40px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes masukKananBawah {
+  from {
+    transform: translate(100px, 100px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
