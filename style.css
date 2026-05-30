@@ -12,6 +12,11 @@ body {
   box-sizing: border-box;
 }
 
+.wrapper {
+  height: 100vh;
+  overflow: hidden; /* 🔥 ini kunci utama */
+}
+
 /* Background full layar */
 .bg {
   min-height: 100vh; /* penting! bukan height */
@@ -37,6 +42,9 @@ body {
   top: 30px;
   width: 100%;
   text-align: center;
+
+   margin: 0;
+  margin-top: 30px;
 
   font-size: 30px;
   letter-spacing: 2px;
@@ -73,6 +81,8 @@ body {
   font-family: "Imperial Script", cursive;
   font-size: 50px;
 
+  margin: 0;
+
   color: white;
 
   /* efek glow halus */
@@ -98,7 +108,7 @@ body {
   bottom: 60px; /* posisi bawah layar */
   left: 50%;
   transform: translateX(-50%);
-
+  margin-bottom: 40px;
   padding: 12px 25px;
   font-size: 14px;
 
