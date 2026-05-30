@@ -11,7 +11,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    
     <div class="wrapper">
+        <audio id="music" loop>
+            <source src="assets/music.mp3" type="audio/mpeg">
+        </audio>
         <div class="bg">
 
     <img src="assets/bunga1.webp" class="bunga kiri-atas">
@@ -27,9 +31,13 @@
         <button class="btn-buka" onclick="bukaUndangan()">
             Buka Undangan
         </button>
+        
 
     </div>
     </div>
+    <button onclick="toggleMusic()" class="btn-music">
+    🔊
+    </button>
     </div>
     
 </body>
