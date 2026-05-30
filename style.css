@@ -20,7 +20,7 @@ body {
 /* Background full layar */
 .bg {
   min-height: 100vh; /* penting! bukan height */
-  background: url('assets/foto.jpeg') center center no-repeat;
+  background: url('assets/foto.png') center center no-repeat;
   background-size: cover;
   position: relative;
 }
